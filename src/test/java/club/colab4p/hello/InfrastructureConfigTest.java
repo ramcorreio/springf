@@ -39,7 +39,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-public class InfrastructureConfig {
+public class InfrastructureConfigTest {
 
 	/**
 	 * Bootstraps an in-memory HSQL database.

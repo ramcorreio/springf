@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@ContextConfiguration(classes = ApplicationConfig.class)
+@ContextConfiguration(classes = {InfrastructureConfigTest.class, ApplicationConfig.class})
 public class CustomerRepositoryTest {
 
 	@Autowired
