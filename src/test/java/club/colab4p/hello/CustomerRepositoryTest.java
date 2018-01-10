@@ -1,4 +1,4 @@
-package club.colab4p.springf;
+package club.colab4p.hello;
 
 import org.junit.Assert;
 import org.junit.Test;

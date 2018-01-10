@@ -1,4 +1,4 @@
-package club.colab4p.springf;
+package club.colab4p.hello;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
