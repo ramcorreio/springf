@@ -1,10 +1,10 @@
-package club.colab4p.springf.repo;
+package club.colab4p.springf.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 
-import club.colab4p.springf.repo.ApplicationConfig;
+import club.colab4p.springf.config.ApplicationConfig;
 
 @Configuration
 @Import(ApplicationConfig.class)

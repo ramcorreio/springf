@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package club.colab4p.springf.repo;
+package club.colab4p.springf.config;
 
 import java.util.Properties;
 
@@ -49,8 +49,7 @@ public class ApplicationConfig {
 
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		System.out.println(env);
-
+		
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		//vendorAdapter.setDatabase(Database.valueOf(env.getProperty("springf.database.vendor")));
 		//vendorAdapter.setGenerateDdl(Boolean.valueOf(env.getProperty("springf.database.ddl")));
@@ -67,7 +66,6 @@ public class ApplicationConfig {
 
 	@Bean
 	public DataSource dataSource() {
-		System.out.println(env);
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(env.getProperty("springf.hibernate.connection.driver_class"));
 		dataSource.setUrl(env.getProperty("springf.hibernate.connection.url"));
