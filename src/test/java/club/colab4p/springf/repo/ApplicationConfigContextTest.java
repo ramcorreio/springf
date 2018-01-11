@@ -1,4 +1,4 @@
-package club.colab4p.hello;
+package club.colab4p.springf.repo;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -8,15 +8,15 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import club.colab4p.hello.ApplicationConfig;
-import club.colab4p.hello.CustomerRepository;
+import club.colab4p.springf.repo.CustomerRepository;
 
-public class ApplicationConfigTest {
 
+public class ApplicationConfigContextTest {
+	
 	@Test
 	public void bootstrapAppFromJavaConfig() {
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfigTest.class);
 		assertThat(context, is(notNullValue()));
 		assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
 	}

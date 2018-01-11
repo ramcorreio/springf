@@ -1,4 +1,4 @@
-package club.colab4p.hello;
+package club.colab4p.springf.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,13 +14,10 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 
-	protected Customer() {
-	}
-
-	public Customer(String firstName, String lastName) {
+	/*public Customer(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
+	}*/
 
 	@Override
 	public String toString() {

@@ -1,4 +1,4 @@
-package club.colab4p.hello;
+package club.colab4p.springf.repo;
 
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.hasSize;
@@ -15,11 +15,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import club.colab4p.springf.domain.Customer;
+import club.colab4p.springf.repo.CustomerRepository;
+
 //import club.colab4p.hello.EmployeeRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@ContextConfiguration(classes = {InfrastructureConfigTest.class, ApplicationConfig.class})
+@ContextConfiguration(classes = {ApplicationConfigTest.class})
 public class CustomerRepositoryTest {
 
 	@Autowired
