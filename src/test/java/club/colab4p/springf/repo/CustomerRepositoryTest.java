@@ -19,12 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 import club.colab4p.springf.config.ApplicationConfigTest;
 import club.colab4p.springf.domain.Customer;
 
-//import club.colab4p.hello.EmployeeRepository;
-
 @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {ApplicationConfigTest.class})
 @Transactional
 @Rollback(false)
-@ContextConfiguration(classes = {ApplicationConfigTest.class})
 public class CustomerRepositoryTest {
 
 	@Autowired
