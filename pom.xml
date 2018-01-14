@@ -25,8 +25,8 @@
 		<!-- dependências plugins -->
 		<version.maven-compiler-plugin>3.7.0</version.maven-compiler-plugin>
 		<version.maven-war-plugin>3.2.0</version.maven-war-plugin>
-		<version.maven-war-plugin.source>1.8</version.maven-war-plugin.source>
-		<version.maven-war-plugin.target>${version.maven-war-plugin.source}</version.maven-war-plugin.target>
+		<version.java.source>1.8</version.java.source>
+		<version.java.target>${version.java.source}</version.java.target>
 
 		<version.slf4j>1.7.1</version.slf4j>
 		<version.logback>1.0.6</version.logback>
@@ -180,15 +180,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${version.maven-compiler-plugin}</version>
 				<configuration>
-					<source>${version.maven-war-plugin.source}</source>
-					<target>${version.maven-war-plugin.target}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>${version.maven-war-plugin}</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<source>${version.java.source}</source>
+					<target>${version.java.target}</target>
 				</configuration>
 			</plugin>
 		</plugins>
