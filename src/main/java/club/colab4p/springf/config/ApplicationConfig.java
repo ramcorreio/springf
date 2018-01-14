@@ -29,6 +29,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -41,9 +42,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "club.colab4p.springf.repo")
+@EnableJpaRepositories(basePackages = ApplicationConfig.BASE_PACKAGES)
 public class ApplicationConfig {
 
+	static final String PACKAGES_TO_SCAN = "club.colab4p.springf.domain";
+
+	static final String BASE_PACKAGES = "club.colab4p.springf.repo";
+	
 	@Autowired
 	private Environment env;
 
@@ -51,16 +56,15 @@ public class ApplicationConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		//vendorAdapter.setDatabase(Database.valueOf(env.getProperty("springf.database.vendor")));
-		//vendorAdapter.setGenerateDdl(Boolean.valueOf(env.getProperty("springf.database.ddl")));
+		vendorAdapter.setDatabase(Database.valueOf(env.getProperty("springf.database.vendor")));
+		vendorAdapter.setGenerateDdl(Boolean.valueOf(env.getProperty("springf.database.ddl")));
 
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan("club.colab4p.springf.domain");
+		em.setPackagesToScan(PACKAGES_TO_SCAN);
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(additionalProperties());
-		em.setLoadTimeWeaver(new org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver());
-
+		
 		return em;
 	}
 
